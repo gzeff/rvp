@@ -1,0 +1,9 @@
+41.72722	12.7 #alban
+42.17	12.22 #sabatini
+42.367	12.188 #vico
+42.6	11.93 #vulsini
+37.73	15.00 #etna
+40.82	14.43 #vesuvius
+40.83	14.14 #phlegrean
+38.404	14.96167 #vulcano
+40.948	15.63556 #vulture

@@ -1,0 +1,6 @@
+#!/bin/csh
+
+# Is -C12/41 the center of the line, or where the line emanates from?
+awk '{print $2,$1,$3}' eqdata.txt | gmt project -C12/41 -E14/43 -Fzpqrs -Lw -Q > projection.dat
+
+# Lon Lat Dep

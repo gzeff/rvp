@@ -1,0 +1,4 @@
+#!/bin/csh
+awk '{print $2, $1}' plotdata.txt | gmt psxy -JX6.5i -R0/275/25/420 -Sc0.1i -W1p > plot.ps
+
+preview plot.ps

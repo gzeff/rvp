@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Make the map of Italy.
+gmt pscoast -R10/18/40/44 -JQ180/6i -B2g1 -P -Dh -Na -W0.5p -G150 -K > map.ps
+
+# Plot the earthquakes as circles. Color circles by depth and scale size with magnitude.
+awk '{print $2, $1, $3, $5}' eqdata.txt | gmt psxy -R -J -Sc -Cquakes.cpt -O -K >> map.ps
+
+# Plot a transect through Alban Hills. This is the line we want to project the quakes on to.
+awk '{print $1, $2}' transect1.txt | gmt psxy -R -J -W0.5p,black -O -K >> map.ps
+
+#plot the adriatic boundary. teeth indicating direction of subduction are plotted with the -Sf command.
+awk '{print $1, $2}' boundary.xy | gmt psxy -J -R -W0.5p,black -Gblack -Sf0.45/3p+t+l -O -K  >> map.ps
+
+#plot some italian volcanoes. (Add labels in illustrator)
+awk '{print $2, $1}' rvpcoords.txt | gmt psxy -R -J  -St0.09i -G0 -O >> map.ps
+
+
+
+#plate boundary data taken from gplates global geology
